@@ -23,17 +23,12 @@ Unlike cloud-based chatbots, this assistant acts as a **personal AI mediator** t
 ## 🏗️ Architecture Overview
 
 Voice Input
-↓
-Speech-to-Text (Whisper)
-↓
-Intent & Safety Layer
-↓
-LLM Reasoning (Groq)
-↓
-Tool / Memory / Response
-↓
-Text-to-Speech
-
+→ Speech-to-Text (Whisper)
+→ Mode & Intent Detection
+→ Safety Gate
+→ LLM Reasoning or Tool Execution
+→ Text-to-Speech Response
+---
 
 This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
 
@@ -98,10 +93,6 @@ Config-driven behavior
 
 Optional open-source framework version (without personal data)
 
-⚠️ Disclaimer
-
-This project is provided for personal and educational use.
-No guarantees are made regarding fitness for production or commercial deployment.
 
 📁 Project Structure
 
@@ -121,3 +112,8 @@ voice_ai_agent/
 ├── config.yaml            # Runtime configuration
 ├── requirements.txt
 └── README.md
+
+⚠️ Disclaimer
+
+This project is provided for personal and educational use.
+No guarantees are made regarding fitness for production or commercial deployment.
