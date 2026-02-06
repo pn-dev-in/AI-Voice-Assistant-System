@@ -25,17 +25,17 @@ Unlike cloud chatbots, this assistant:
 
 ## 🏗️ Architecture Overview
 
-Voice Input
-↓
-Speech-to-Text (Whisper)
-↓
-Intent & Safety Layer
-↓
-LLM Reasoning (Groq)
-↓
-Tool / Memory / Response
-↓
-Text-to-Speech
+##Voice Input
+     ##↓
+##Speech-to-Text (Whisper)
+     ##↓
+##Intent & Safety Layer
+     ##↓
+##LLM Reasoning (Groq)
+     ##↓
+##Tool / Memory / Response
+     ##↓
+##Text-to-Speech
 
 
 ---
