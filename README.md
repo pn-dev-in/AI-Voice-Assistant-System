@@ -87,6 +87,7 @@ Triggered only when requested.
 
 ---
 
+
 ## Architecture Overview
 
 Speech Input
@@ -104,7 +105,7 @@ Safety Gate
 Tool Executor or LLM
 ↓
 Text-to-Speech
-
+---
 
 **Design principles:**
 - Single entry point
@@ -113,25 +114,27 @@ Text-to-Speech
 - Minimal hidden state
 ---
 
+
 ## Project Structure
+
 
 voice_ai_agent/
 ├── src/
-│ ├── main.py # Single entry point
+│ ├── main.py # Entry point
 │ ├── audio/ # Speech-to-text
-│ ├── brain/ # LLM interaction
-│ ├── safety/ # Intent & safety logic
+│ ├── brain/ # LLM logic
+│ ├── safety/ # Intent & safety
 │ ├── tools/ # Sandboxed actions
 │ ├── memory/ # Explicit memory
 │ ├── modes/ # Interaction modes
 │ └── voice/ # Text-to-speech
 │
-├── user_data/ # Local-only user data
-├── config.yaml # Runtime configuration
+├── user_data/ # Local-only data
+├── config.yaml
 ├── requirements.txt
 └── README.md
-
 ---
+
 
 ## Privacy & Ethics
 
