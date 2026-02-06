@@ -22,17 +22,12 @@ Unlike cloud-based chatbots, this assistant acts as a **personal AI mediator** t
 
 ## 🏗️ Architecture Overview
 
-Voice Input
-↓
-Speech-to-Text (Whisper)
-↓
-Intent & Safety Layer
-↓
-LLM Reasoning (Groq)
-↓
-Tool / Memory / Response
-↓
-Text-to-Speech
+- **Voice Input** – User speaks via push-to-talk
+- **Speech-to-Text (Whisper)** – Converts audio to text
+- **Intent & Safety Layer** – Classifies intent and applies guardrails
+- **LLM Reasoning (Groq)** – Generates intelligent responses
+- **Tool / Memory Layer** – Executes safe tasks or retrieves memory
+- **Text-to-Speech** – Speaks the final response
 
 
 This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
