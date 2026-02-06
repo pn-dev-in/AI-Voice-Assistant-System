@@ -1,171 +1,123 @@
-# Personal Voice AI Assistant
+# 🎙️ Personal Voice-First AI Assistant
 
-A local, privacy-first voice assistant designed for **daily personal use**, not for surveillance, automation hype, or cloud dependency.
+A **local, privacy-first, voice-driven AI assistant** designed for personal daily use.
 
-This project focuses on **engineering discipline**: safety, intent control, explicit memory, and reliability — rather than flashy demos.
+This project focuses on **usability, safety, and human control**, rather than automation hype or always-on surveillance.
 
----
-
-## Why this project exists
-
-Most voice assistants today are:
-- Always listening
-- Cloud-dependent
-- Opaque about data usage
-- Difficult to reason about safely
-
-This assistant was built with the opposite philosophy:
-
-- **Push-to-talk only** (no background listening)
-- **Local execution** wherever possible
-- **Explicit intent & safety gates**
-- **User-controlled memory**
-- **No silent automation**
-
-The goal is not to replace tools, but to **support focused thinking and daily planning**.
+Unlike cloud-based chatbots, this assistant acts as a **personal AI mediator** that runs locally and responds only when explicitly invoked.
 
 ---
 
-## Core Capabilities
+## ✨ Key Features
 
-### 🎙 Voice Interaction
-- Push-to-talk activation via keyboard hotkey
+- 🎤 **Push-to-talk voice interaction** (no always-on listening)
+- 🧠 **LLM-based reasoning** powered by Groq
+- 🔊 **Voice responses** via Text-to-Speech
+- 🧭 **Intent classification & safety guardrails**
+- 🗂️ **Explicit long-term memory** (user-controlled, opt-in only)
+- 🛠️ **Sandboxed task execution** (notes, simple utilities)
+- 🧩 **Modular and extensible architecture**
+
+---
+
+## 🏗️ Architecture Overview
+
+Voice Input
+↓
+Speech-to-Text (Whisper)
+↓
+Intent & Safety Layer
+↓
+LLM Reasoning (Groq)
+↓
+Tool / Memory / Response
+↓
+Text-to-Speech
+
+
+This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
+
+---
+
+## 🔐 Privacy & Safety Principles
+
+This assistant is designed to be **trustworthy by default**.
+
 - No always-on microphone
-- Low-latency speech-to-text
-
-### 🧠 Reasoning Layer
-- Natural language understanding via LLM
-- Deterministic intent classification
-- Calm, concise responses by default
-
-### 🛡 Safety & Intent Control
-Every request is classified before action:
-
-- `QUERY` — informational requests
-- `TASK` — limited, sandboxed actions
-- `SYSTEM_ACTION` — blocked
-- `REJECT` — blocked
-
-The LLM **never executes actions directly**.
+- No silent memory storage
+- No OS-level or shell command execution
+- No user data stored remotely
+- All personal data remains local to the machine
+- LLM access is used strictly for reasoning and language generation
 
 ---
 
-### 🛠 Safe Tool Execution
-- Tools are explicitly registered
-- Sandboxed file access only
-- No shell commands
-- No OS-level actions
+## 🚀 Getting Started
 
-Current tools:
-- Save personal notes
-- Read saved notes
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+2. Create a virtual environment
+python -m venv venv
+venv\Scripts\activate
+3. Install dependencies
+pip install -r requirements.txt
+4. Configure environment variables
+Create a .env file in the project root:
 
----
+GROQ_API_KEY=your_api_key_here
+Note: API keys and personal data are never committed to the repository.
 
-### 🧠 Memory (Explicit & Ethical)
-- No silent data collection
-- Memory only written on explicit user request
-- Local persistence (JSON)
-- User-auditable and removable
+5. Run the assistant
+python src/main.py
+Press Ctrl + Alt + Space to speak
 
-Types of memory:
-- Long-term factual memory (explicit)
-- Session context (temporary)
-- No background profiling
+Press ESC to exit
 
----
+🧠 Why This Project Exists
+This assistant was built to reduce friction in daily thinking and productivity by providing a private, voice-first interface to intelligence, instead of repeatedly opening web-based chat applications.
 
-### 📅 Daily Briefing / Focus Mode
-A calm, proactive mode that:
-- Summarizes saved context
-- Suggests one focus for the next hour
-- Asks one clarifying question
+The goal is not autonomy.
+The goal is useful presence with human control.
 
-No notifications.  
-No nagging.  
-Triggered only when requested.
+📌 Notes
+This project is intended primarily for personal use
 
----
+Users must supply their own API keys
 
-## Architecture Overview
+Personal memory and notes are stored locally and never shared
 
-Speech Input
-↓
-STT (Whisper)
-↓
-Mode Detection
-├─ Daily Briefing
-└─ Normal Interaction
-↓
-Memory Intent
-↓
-Safety Gate
-↓
-Tool Executor OR LLM
-↓
-TTS Output
----
+Future improvements are guided by real usage, not feature bloat
 
-Design principles:
-- Single entry point
-- Clear separation of concerns
-- Deterministic control flow
-- Minimal hidden state
+🔮 Future Work (Optional)
 
----
+Performance tuning
 
-## Project Structure
+Config-driven behavior
+
+Optional open-source framework version (without personal data)
+
+⚠️ Disclaimer
+
+This project is provided for personal and educational use.
+No guarantees are made regarding fitness for production or commercial deployment.
+
+📁 Project Structure
 
 voice_ai_agent/
 ├── src/
-│ ├── main.py # Single entry point
-│ ├── audio/ # Speech-to-text
-│ ├── brain/ # LLM interaction
-│ ├── safety/ # Intent & safety logic
-│ ├── tools/ # Sandboxed actions
-│ ├── memory/ # Explicit memory
-│ ├── modes/ # Interaction modes
-│ └── voice/ # Text-to-speech
+│   ├── main.py            # Application entry point
+│   │
+│   ├── audio/             # Speech-to-text (Whisper)
+│   ├── brain/             # LLM reasoning logic
+│   ├── safety/            # Intent classification & guardrails
+│   ├── tools/             # Sandboxed task execution
+│   ├── memory/            # Explicit, user-controlled memory
+│   ├── modes/             # Interaction modes (normal, briefing)
+│   └── voice/             # Text-to-speech
 │
-├── user_data/ # Local-only user data
-├── config.yaml # Runtime configuration
+├── user_data/             # Local-only personal data (gitignored)
+├── config.yaml            # Runtime configuration
 ├── requirements.txt
 └── README.md
----
-
-
-## Privacy & Ethics
-
-This assistant:
-- Does **not** listen unless explicitly activated
-- Does **not** transmit audio recordings
-- Does **not** store data without consent
-- Runs entirely on the user’s machine
-
-API keys remain local and are never committed.
-
----
-
-## Status
-
-- Personal, private assistant
-- Actively used and iterated
-- Not published as a product
-- Not intended for mass deployment
-
-This is a **deliberately scoped personal system**, not a startup demo.
-
----
-
-## Future Work (Optional)
-
-- Performance tuning
-- Config-driven behavior
-- Optional open-source framework version (without personal data)
-
----
-
-## Disclaimer
-
-This project is provided for educational and personal use.
-No guarantees are made regarding fitness for production or commercial use.
