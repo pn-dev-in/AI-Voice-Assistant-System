@@ -1,96 +1,121 @@
-# Privacy-First Voice AI Assistant
+🎙️ Privacy-First Voice AI Assistant
 
-A local, privacy-first voice assistant designed for **daily personal use**, not for surveillance, automation hype, or cloud dependency.
+A local, privacy-first voice assistant designed for daily personal use — not for surveillance, automation hype, or cloud dependency.
 
-This project focuses on **engineering discipline**: safety, intent control, explicit memory, and reliability — rather than flashy demos.
+This project emphasizes engineering discipline: safety, intent control, explicit memory, and reliability — instead of flashy demos.
 
----
+🧠 Why This Project Exists
 
-## Why this project exists
+Most modern voice assistants are:
 
-Most voice assistants today are:
-- Always listening
-- Cloud-dependent
-- Opaque about data usage
-- Difficult to reason about safely
+Always listening
+
+Cloud-dependent
+
+Opaque about data usage
+
+Difficult to reason about safely
 
 This assistant was built with the opposite philosophy:
 
-- **Push-to-talk only** (no background listening)
-- **Local execution** wherever possible
-- **Explicit intent & safety gates**
-- **User-controlled memory**
-- **No silent automation**
+Push-to-talk only (no background listening)
 
-The goal is not to replace tools, but to **support focused thinking and daily planning**.
+Local execution wherever possible
 
----
+Explicit intent and safety gates
 
-## Core Capabilities
+User-controlled memory
 
-### 🎙 Voice Interaction
-- Push-to-talk activation via keyboard hotkey
-- No always-on microphone
-- Low-latency speech-to-text
+No silent automation
 
-### 🧠 Reasoning Layer
-- Natural language understanding via LLM
-- Deterministic intent classification
-- Calm, concise responses by default
+The goal is not to replace tools, but to support focused thinking and daily planning.
 
-### 🛡 Safety & Intent Control
+✨ Core Capabilities
+🎙 Voice Interaction
+
+Push-to-talk activation via keyboard hotkey
+
+No always-on microphone
+
+Low-latency speech-to-text (Whisper)
+
+🧠 Reasoning Layer
+
+Natural language understanding via LLM (Groq)
+
+Deterministic intent classification
+
+Calm, concise responses by default
+
+🛡 Safety & Intent Control
+
 Every request is classified before action:
 
-- `QUERY` — informational requests
-- `TASK` — limited, sandboxed actions
-- `SYSTEM_ACTION` — blocked
-- `REJECT` — blocked
+QUERY — informational requests
 
-The LLM **never executes actions directly**.
+TASK — limited, sandboxed actions
 
----
+SYSTEM_ACTION — blocked
 
-### 🛠 Safe Tool Execution
-- Tools are explicitly registered
-- Sandboxed file access only
-- No shell commands
-- No OS-level actions
+REJECT — blocked
+
+The LLM never executes actions directly.
+
+🛠 Safe Tool Execution
+
+Explicitly registered tools only
+
+Sandboxed file access
+
+No shell commands
+
+No OS-level actions
 
 Current tools:
-- Save personal notes
-- Read saved notes
 
----
+Save personal notes
 
-### 🧠 Memory (Explicit & Ethical)
-- No silent data collection
-- Memory only written on explicit user request
-- Local persistence (JSON)
-- User-auditable and removable
+Read saved notes
 
-Types of memory:
-- Long-term factual memory (explicit)
-- Session context (temporary)
-- No background profiling
+🧠 Memory (Explicit & Ethical)
 
----
+No silent data collection
 
-### 📅 Daily Briefing / Focus Mode
+Memory written only on explicit user request
+
+Local persistence (JSON)
+
+Fully user-auditable and removable
+
+Memory types:
+
+Long-term factual memory (explicit)
+
+Session context (temporary)
+
+No background profiling. Ever.
+
+📅 Daily Briefing / Focus Mode
+
 A calm, proactive mode that:
-- Summarizes saved context
-- Suggests one focus for the next hour
-- Asks one clarifying question
 
-No notifications.  
-No nagging.  
+Summarizes saved context
+
+Suggests one focus for the next hour
+
+Asks one clarifying question
+
+No notifications.
+No nagging.
 Triggered only when requested.
 
----
+🏗️ Architecture Overview
 
+The assistant follows a deterministic, layered processing pipeline:
 
-## 🏗️ Architecture Overview
+🏗️ Architecture Overview
 
-The assistant follows a **deterministic, layered processing pipeline**:
+The assistant follows a deterministic, layered processing pipeline:
 
 Voice Input
 → Speech-to-Text (Whisper)
@@ -99,107 +124,117 @@ Voice Input
 → LLM Reasoning or Tool Execution
 → Text-to-Speech Response
 
+
 Each layer has a single responsibility, making the system predictable, safe, and easy to extend.
 
+🧩 Design Principles
 
-### Design Principles
+Single, explicit entry point
 
-- Single, explicit entry point
-- Clear separation of concerns
-- Deterministic control flow
-- No hidden or implicit state
-- User control over memory and actions
+Clear separation of concerns
 
+Deterministic control flow
 
-## 📁 Project Structure
+No hidden or implicit state
 
+User control over memory and actions
+
+📁 Project Structure 
 
 voice_ai_agent/
 ├── src/
-│ ├── main.py # Single entry point
-│ ├── audio/ # Speech-to-text (Whisper)
-│ ├── brain/ # LLM reasoning logic
-│ ├── safety/ # Intent classification & guardrails
-│ ├── tools/ # Sandboxed task execution
-│ ├── memory/ # Explicit, user-controlled memory
-│ ├── modes/ # Interaction modes (normal, briefing)
-│ └── voice/ # Text-to-speech
+│   ├── main.py            # Application entry point
+│   │
+│   ├── audio/             # Speech-to-text (Whisper)
+│   ├── brain/             # LLM reasoning logic
+│   ├── safety/            # Intent classification & guardrails
+│   ├── tools/             # Sandboxed task execution
+│   ├── memory/            # Explicit, user-controlled memory
+│   ├── modes/             # Interaction modes (normal, briefing)
+│   └── voice/             # Text-to-speech
 │
-├── user_data/ # Local-only personal data (gitignored)
-├── config.yaml # Runtime configuration
+├── user_data/             # Local-only personal data (gitignored)
+├── config.yaml            # Runtime configuration
 ├── requirements.txt
 └── README.md
 
 
-## Privacy & Ethics
+This structure is:
+
+scalable
+
+readable
+
+recruiter-friendly
+
+immediately understandable
+
+🔐 Privacy & Ethics
 
 This assistant:
-- Does **not** listen unless explicitly activated
-- Does **not** transmit audio recordings
-- Does **not** store data without consent
-- Runs entirely on the user’s machine
 
-API keys remain local and are never committed.
+Does not listen unless explicitly activated
 
----
+Does not transmit audio recordings
 
-## Status
+Does not store data without consent
 
-- Personal, private assistant
-- Actively used and iterated
-- Not published as a product
-- Not intended for mass deployment
+Runs entirely on the user’s machine
 
-This is a **deliberately scoped personal system**, not a startup demo.
+Keeps API keys local and uncommitted
 
----
+Privacy is a default, not an option.
 
-## Future Work (Optional)
-
-- Performance tuning
-- Config-driven behavior
-- Optional open-source framework version (without personal data)
-
----
-
-## Disclaimer
-
-This project is provided for educational and personal use.
-No guarantees are made regarding fitness for production or commercial use.
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
+🚀 Getting Started
+1. Clone the repository
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
+
 2. Create a virtual environment
 python -m venv venv
 venv\Scripts\activate
+
 3. Install dependencies
 pip install -r requirements.txt
+
 4. Configure environment variables
+
 Create a .env file in the project root:
 
 GROQ_API_KEY=your_api_key_here
-Note: API keys and personal data are never committed to the repository.
+
+
+API keys and personal data are never committed to the repository.
 
 5. Run the assistant
 python src/main.py
+
+
 Press Ctrl + Alt + Space to speak
 
 Press ESC to exit
 
-🧠 Why This Project Exists
+📌 Project Status
 
-This assistant was built to reduce friction in daily thinking and productivity by providing a private, voice-first interface to intelligence, instead of repeatedly opening web-based chat applications.
+Personal, private assistant
 
-The goal is not autonomy.
-The goal is useful presence with human control.
+Actively used and iterated
 
-📌 Notes
+Not published as a product
 
-This project is intended primarily for personal use
-Users must supply their own API keys
-Personal memory and notes are stored locally and never shared
-Future improvements are guided by real usage, not feature bloat
+Not intended for mass deployment
+
+This is a deliberately scoped personal system, not a startup demo.
+
+🔮 Future Work (Optional)
+
+Performance tuning
+
+Config-driven behavior
+
+Optional open-source framework version (without personal data)
+
+⚠️ Disclaimer
+
+This project is provided for personal and educational use.
+No guarantees are made regarding fitness for production or commercial deployment.
