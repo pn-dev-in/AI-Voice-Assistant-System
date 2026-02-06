@@ -1,25 +1,22 @@
 # 🎙️ Personal Voice-First AI Assistant
 
 A **local, privacy-first, voice-driven AI assistant** designed for personal daily use.
-This project focuses on **usability, safety, and control**, not automation hype.
 
-Unlike cloud chatbots, this assistant:
-- Runs locally on your machine
-- Uses push-to-talk (no always-on listening)
-- Stores memory only with explicit consent
-- Executes tasks through a safe, sandboxed tool system
+This project focuses on **usability, safety, and human control**, rather than automation hype or always-on surveillance.
+
+Unlike cloud-based chatbots, this assistant acts as a **personal AI mediator** that runs locally and responds only when explicitly invoked.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 🎤 Push-to-talk voice interaction (hands-free, privacy-safe)
-- 🧠 LLM-based reasoning (Groq API)
-- 🔊 Voice responses (Text-to-Speech)
-- 🧭 Intent classification & safety guardrails
-- 🗂️ Explicit long-term memory (user-controlled)
-- 🛠️ Safe task execution (notes, reminders, etc.)
-- 🧩 Modular, extensible architecture
+- 🎤 **Push-to-talk voice interaction** (no always-on listening)
+- 🧠 **LLM-based reasoning** powered by Groq
+- 🔊 **Voice responses** via Text-to-Speech
+- 🧭 **Intent classification & safety guardrails**
+- 🗂️ **Explicit long-term memory** (user-controlled, opt-in only)
+- 🛠️ **Sandboxed task execution** (notes, simple utilities)
+- 🧩 **Modular and extensible architecture**
 
 ---
 
@@ -38,17 +35,20 @@ Tool / Memory / Response
 Text-to-Speech
 
 
+This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
+
 ---
 
 ## 🔐 Privacy & Safety Principles
 
+This assistant is designed to be **trustworthy by default**.
+
 - No always-on microphone
 - No silent memory storage
-- No OS-level command execution
-- No user data sent anywhere except the LLM API
-- All sensitive data stored locally
-
-This assistant is designed to be **trustworthy by default**.
+- No OS-level or shell command execution
+- No user data stored remotely
+- All personal data remains local to the machine
+- LLM access is used strictly for reasoning and language generation
 
 ---
 
@@ -58,38 +58,34 @@ This assistant is designed to be **trustworthy by default**.
 ```bash
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
-
-2. Create virtual environment
+2. Create a virtual environment
 python -m venv venv
 venv\Scripts\activate
-
 3. Install dependencies
 pip install -r requirements.txt
-
-4. Add environment variables
-
-Create a .env file:
+4. Configure environment variables
+Create a .env file in the project root:
 
 GROQ_API_KEY=your_api_key_here
+Note: API keys and personal data are never committed to the repository.
 
 5. Run the assistant
 python src/main.py
+Press Ctrl + Alt + Space to speak
 
-
-Press Ctrl + Alt + Space to speak.
-Press ESC to exit.
+Press ESC to exit
 
 🧠 Why This Project Exists
+This assistant was built to reduce friction in daily thinking and productivity by providing a private, voice-first interface to intelligence, instead of repeatedly opening web-based chat applications.
 
-This assistant was built to reduce friction in daily thinking and tasks by acting as a personal AI mediator, rather than repeatedly opening web-based chat interfaces.
-
-The goal is not autonomy — the goal is useful presence with human control.
+The goal is not autonomy.
+The goal is useful presence with human control.
 
 📌 Notes
+This project is intended primarily for personal use
 
-This project is intended for personal use
+Users must supply their own API keys
 
-API keys and personal data are not included
+Personal memory and notes are stored locally and never shared
 
 Future improvements are guided by real usage, not feature bloat
-
