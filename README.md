@@ -1,33 +1,43 @@
-# 🎙️ Personal Voice-First AI Assistant
+# Voice-First AI Assistant (Local, Privacy-Preserving)
 
-A **local, privacy-first, voice-driven AI assistant** designed for personal daily use.
+An applied AI system demonstrating **speech recognition, LLM-based reasoning, safety guardrails, and modular AI architecture**.
 
-This project focuses on **usability, safety, and human control**, rather than automation hype or always-on surveillance.
 
-Unlike cloud-based chatbots, this assistant acts as a **personal AI mediator** that runs locally and responds only when explicitly invoked.
+## 🔍 What This Project Demonstrates
+- End-to-end AI system design
+- Voice-based human–AI interaction
+- LLM integration (Groq)
+- Safety-aware intent classification
+- Local-first, privacy-preserving architecture
+- Modular, extensible Python codebase
+
+
+## 📌 Overview
+A local, privacy-first, voice-driven AI assistant designed for daily personal use.
+
+Unlike cloud-based assistants, this system runs locally, activates only on explicit user input, and enforces strict safety and memory controls.
 
 ---
 
 ## ✨ Key Features
-
-- 🎤 **Push-to-talk voice interaction** (no always-on listening)
-- 🧠 **LLM-based reasoning** powered by Groq
-- 🔊 **Voice responses** via Text-to-Speech
-- 🧭 **Intent classification & safety guardrails**
-- 🗂️ **Explicit long-term memory** (user-controlled, opt-in only)
-- 🛠️ **Sandboxed task execution** (notes, simple utilities)
-- 🧩 **Modular and extensible architecture**
+- LLM-based reasoning using Groq
+- Push-to-talk voice interaction (no always-on listening)
+- Explicit, user-controlled long-term memory
+- Intent classification with safety guardrails
+- Sandboxed task execution
+- Modular and extensible architecture
 
 ---
 
-## 🏗️ Architecture Overview
 
-Voice Input
-→ Speech-to-Text (Whisper)
-→ Mode & Intent Detection
-→ Safety Gate
-→ LLM Reasoning or Tool Execution
+## 🏗️ System Architecture
+Voice Input  
+→ Speech-to-Text (Whisper)  
+→ Mode & Intent Detection  
+→ Safety Gate  
+→ LLM Reasoning (Groq) or Tool Execution  
 → Text-to-Speech Response
+
 ---
 
 This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
@@ -46,6 +56,12 @@ This assistant is designed to be **trustworthy by default**.
 - LLM access is used strictly for reasoning and language generation
 
 ---
+
+## 🎯 Intended Role Fit
+This project is aligned with:
+- AI/ML Engineer (Applied Systems)
+- AI Engineer – Voice / Conversational AI
+- Software Engineer (AI-integrated systems)
 
 ## 🚀 Getting Started
 
